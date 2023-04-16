@@ -1,0 +1,213 @@
+<app-sidebar></app-sidebar>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <h6 class="header-pretitle">
+                      Módulo
+                    </h6>
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                        Productos
+                    </h1>
+
+                  </div>
+                </div> <!-- / .row -->
+      
+              </div>
+            </div>
+
+            <!-- Alert -->
+
+
+            <!-- Card -->
+            <div class="card">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  Mostrando todos tus productos
+                </h4>
+
+              </div>
+              <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group input-group-merge ">
+                                <input type="text" class="form-control form-control-appended" placeholder="Buscar producto" name="filtro">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary">
+                                      Buscar
+                                  </button>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary mr-3" data-toggle="modal" [attr.data-target]="'#modalCentered'">Nueva etiqueta</button>
+                            <a class="btn btn-primary" [routerLink]="['/productos/create']" routerLinkActive="router-link-active"  style="cursor: pointer;">Nuevo producto</a>
+                            <div id="modalCentered" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 600px;">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h4 class="modal-title" id="exampleModalCenterTitle">Etiquetas</h4>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body" style="">
+                                      <div class="input-group mb-3">
+                                        <input type="text" class="form-control" placeholder="Nueva etiqueta" name="nueva_etiqueta">
+                                        <button class="btn btn-primary" style="border-radius: 0px;">Agregar</button>
+            
+                                      </div>
+                                    </div>
+                                    <div class="modal-body" style="padding-top: 0px !important;max-height: 300px;overflow: hidden;overflow-y: auto;">
+                                      <table class="table table-bordered table-striped table-hover">
+                                        <tbody>
+                                          <tr>
+                                            <td class="text-center" colspan="5">
+                                              <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                                                <span class="sr-only">Loading...</span>
+                                              </div>
+                                            </td>
+                                          </tr>
+                                      </tbody>
+                        
+                                      
+                                      </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                   
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-sm table-nowrap card-table">
+                  <thead>
+                    <tr>
+                      <th>Producto</th>
+                      <th>P. soles</th>
+                      <th>p. dolares</th>
+                      <th>Stock</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-size-base">
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center">
+
+                          <!-- Image -->
+                          <div class="avatar mr-3">
+                            <img class="avatar-img rounded me-3 mr-3" [src]="" alt="...">
+                          </div>
+
+                          <div class="ms-3">
+
+                            <!-- Heading -->
+                            <h4 class="fw-normal mb-1">titulo</h4>
+
+                            <!-- Text -->
+                            <span class="badge badge-success" >estado</span>
+
+                          </div>
+
+                        </div>
+         
+                    
+                      </td>
+                      <td>
+                        precio
+                      <td>
+                        precio_dolar
+                      </td>
+                      <td>
+                        stock
+                      </td>
+                      <td>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonAlias" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Opciones
+                          </button>
+                        
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonAlias">
+                            <li>
+                              <a class="dropdown-item" [routerLink]="['/productos/edit',]">Editar</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" [routerLink]="['/productos/variedades',]">Variedades</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" [routerLink]="['/productos/inventario',]">Inventario</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" [routerLink]="['/productos/galeria',]">Galería</a>
+                            </li>
+
+                            <a class="dropdown-item" style="cursor: pointer;" data-toggle="modal">Mostrar producto</a>
+                          </ul>
+                        </div>
+
+                        <div class="modal fade" id="" tabindex="-1" style="display: none;" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">Confirmación de visibilidad</h4>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                              </div>
+                              <div class="modal-body">
+                                <div class="alert d-flex alert-danger" role="alert">
+                                  <i class="ci-close-round lead me-3"></i>
+                                  <div>
+                                    Debe tener 4 imagenes en la galería.
+                                  </div>
+                                </div>
+      
+                                <p>Desea hacer visible el producto en la tienda?</p>
+                              </div>
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-sm" type="button" data-dismiss="modal">Cancelar</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                   
+                  </tbody>
+                  <tbody>
+                    <tr>
+                        <td colspan="5" class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden"></span>
+                            </div>
+                        </td>
+                    </tr>
+                  </tbody>  
+                </table>
+                
+              </div>
+
+            </div>
+  
+            <br>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+</div>

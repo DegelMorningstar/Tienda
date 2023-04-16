@@ -1,0 +1,82 @@
+<app-sidebar></app-sidebar>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10 col-xl-8">
+
+            <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+                <div class="row align-items-center">
+                  <div class="col">
+
+                    <!-- Pretitle -->
+                    <h6 class="header-pretitle">
+                      Módulo
+                    </h6>
+
+                    <!-- Title -->
+                    <h1 class="header-title">
+                        Clientes
+                    </h1>
+
+                  </div>
+                </div> <!-- / .row -->
+      
+              </div>
+            </div>
+
+            <!-- Alert -->
+
+
+            <!-- Card -->
+            <div class="card">
+              <div class="card-header">
+
+                <!-- Title -->
+                <h4 class="card-header-title">
+                  Mostrando todos tus clientes
+                </h4>
+
+              </div>
+              <div class="card-body">
+                <div class="input-group input-group-merge">
+                    <input type="text" class="form-control form-control-appended" placeholder="Buscar cliente" name="filtro">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary">
+                          Buscar
+                      </button>
+                    </div>
+                  </div>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-sm table-nowrap card-table">
+                  <thead>
+                    <tr>
+                      <th>Cliente</th>
+                      <th>Correo</th>
+                    </tr>
+                  </thead>
+                  <tbody class="font-size-base">
+                    <tr *ngFor="let usuario of usuarios">
+                      <td>
+                        <a class="text-primary">{{usuario.nombre}} {{usuario.apellidos}}</a>
+                      </td>
+                      <td>
+                        {{usuario.email}}
+                      </td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+                
+              </div>
+
+            </div>
+            <br>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
+</div>

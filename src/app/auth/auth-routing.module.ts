@@ -9,11 +9,11 @@ const routes: Routes = [
   {
     path: '',
     children: [
-      { path: '**', redirectTo: 'login'},
+      //{ path: '/', redirectTo: 'login'},
       { path: 'login', component: LoginComponent},
       { path: 'registro', component: RegistroComponent},
       { path: 'forgot-password', component: ForgotPasswordComponent},
-      { path: 'validar-email', component: ValidarEmailComponent},
+      { path: 'validar-email/:token', component: ValidarEmailComponent},
     ]
   }
 ]
